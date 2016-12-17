@@ -1,0 +1,436 @@
+{% extends 'view/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="bg1">
+        <div class="grid content1">
+            <h1>Размещение, Развлечения, Приключения</h1>
+
+            <p>Туризм, основанный на сообществах, Центральной Азии (CBT) приглашает вас в увлекательные путешествия в
+                самые
+                живописные уголки восточной страны.</p>
+
+            <form method="post" action="#" class="group">
+                <input type="search" name="name" placeholder="Куда собираетесь?">
+                <input type="date" name="number" placeholder="Заезд">
+                <input type="date" name="number" placeholder="Отъезд">
+                <button type="button" name="button"></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg2">
+        <div class="grid content2">
+            <h3>Популярные туры</h3>
+
+            <div class="line"></div>
+
+            <div class="popular_tours">
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour1.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Баткенская обл.</div>
+                        <div class="price">$ 350</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Цветок “Айгуль”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour2.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Иссык-Кульская обл.</div>
+                        <div class="price">$ 580</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Каньон “Сказка”</h4>
+
+                        <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour3.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Иссык-Кульская обл.</div>
+                        <div class="price">$ 580</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Водопад “Девичьи слезы”</h4>
+
+                        <p>Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour4.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Иссык-Кульская обл</div>
+                        <div class="price">$ 700</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Ущелье “Барскаун”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour5.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">нарынская обл.</div>
+                        <div class="price">$ 610</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Плато “Барскон”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour6.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">нарынская обл.</div>
+                        <div class="price">$ 430</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Озеро “Сон-куль”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour7.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">ошская обл.</div>
+                        <div class="price">$ 815</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Гора “Сулайман-Тоо”</h4>
+
+                        <p>Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    </div>
+                </div>
+
+                <button type="button" name="button" class="button">больше направлений</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg3" id="accommodation">
+        <div class="grid content3">
+            <h3>Размещение</h3>
+
+            <div class="line"></div>
+
+            <div class="hotels">
+                {% for hotel in accommodation %}
+                    <div class="hotel">
+                        <div class="hotel_img">
+                            <img src="{{ hotel.preview.first.content.url }}" alt="hotel">
+
+                            <div class="cost"><span>от</span><br>${{ hotel.price_usd }}</div>
+                        </div>
+
+                        <div class="hotel_desc">
+                            <h5>{{ hotel.title }}</h5>
+
+                            <p>{{ hotel.type }}, {{ hotel.city }}</p>
+
+                            <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">{{ hotel.rate }}</div>
+                            <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">17</div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$80</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Санрайз Ош</h5>#}
+{##}
+{#                        <p>Отель, Ош</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">7,2</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">24</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$100</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Бек Каракол</h5>#}
+{##}
+{#                        <p>Квартира, Каракол</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">2,8</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">38</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$40</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Риверсайд</h5>#}
+{##}
+{#                        <p>Гостевой Дом, Джалал-Абад</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">9,6</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">99</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$70</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Мемфис</h5>#}
+{##}
+{#                        <p>Коттедж, Иссык-Куль</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">6,5</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">41</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$40</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Куль-Нуру</h5>#}
+{##}
+{#                        <p>Гостевой Дом, Иссык-Куль</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">4,5</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">17</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$80</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Санрайз Ош</h5>#}
+{##}
+{#                        <p>Отель, Ош</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">7,2</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">24</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$100</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Бек Каракол</h5>#}
+{##}
+{#                        <p>Квартира, Каракол</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">2,8</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">38</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$40</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Риверсайд</h5>#}
+{##}
+{#                        <p>Гостевой Дом, Джалал-Абад</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">9,6</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">99</div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="hotel">#}
+{#                    <div class="hotel_img">#}
+{#                        <img src="{% static 'images/hotel1.jpg' %}" alt="hotel">#}
+{##}
+{#                        <div class="cost"><span>от</span><br>$70</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="hotel_desc">#}
+{#                        <h5>Мемфис</h5>#}
+{##}
+{#                        <p>Коттедж, Иссык-Куль</p>#}
+{##}
+{#                        <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}" alt="rate">6,5</div>#}
+{#                        <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">41</div>#}
+{#                    </div>#}
+{#                </div>#}
+
+                <button type="button" name="button" class="button">больше размещений</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg4">
+        <div class="grid content4">
+            <h3>Популярные направления</h3>
+
+            <div class="line"></div>
+
+            <div class="popular_directions">
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/p_tour2.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Баткенская обл.</div>
+                        <div class="price">$ 350</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Цветок “Айгуль”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour5.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">нарынская обл.</div>
+                        <div class="price">$ 610</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Плато “Барскон”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour5.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">нарынская обл.</div>
+                        <div class="price">$ 430</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Озеро “Сон-куль”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/tour4.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">Иссык-Кульская обл</div>
+                        <div class="price">$ 700</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Ущелье “Барскаун”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <div class="shadow"></div>
+                    <img src="{% static 'images/p_tour3.jpg' %}" alt="tour">
+
+                    <div class="ppr">
+                        <div class="place">нарынская обл.</div>
+                        <div class="price">$ 610</div>
+                        <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">7,3</div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Плато “Барскон”</h4>
+
+                        <p>Rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div>
+
+                <button type="button" name="button" class="button">больше направлений</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
