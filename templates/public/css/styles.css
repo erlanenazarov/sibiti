@@ -406,7 +406,7 @@ h3 {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 24%;
+    width: 288px;
     height: 450px;
     margin-right: 1.333333333333333%;
     margin-bottom: 17px;
@@ -424,8 +424,8 @@ h3 {
     box-shadow: inset 0 -170px 55px -30px rgba(0,0,0, 0.5);
 }
 
-.popular_tours > .tour:nth-child(2){
-    width: 49.33333333333333%;
+.popular_tours > .tour.two-column {
+    width: 592px;
 }
 
 .popular_tours > .tour:nth-child(3){

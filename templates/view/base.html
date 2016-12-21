@@ -9,6 +9,41 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
     {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block custom_styles %}
+        <style>
+            button {
+                cursor: pointer;
+            }
+
+            .tour > img {
+                cursor: pointer;
+
+                vertical-align: middle;
+                alignment: center;
+
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+
+            .tour:hover > img {
+                zoom: 1.1;
+
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        </style>
+    {% endblock %}
 </head>
 <body>
 
@@ -25,7 +60,7 @@
                 </ul>
             </nav>
 
-            <a class="logo" href="#"><img src="{% static 'images/logotype.png' %}" alt="logotype"></a>
+            <a class="logo" href="{% url 'index' %}"><img src="{% static 'images/logotype.png' %}" alt="logotype"></a>
 
             <!--<div class="profile"></div>-->
         </div>
@@ -93,8 +128,8 @@
 
         <div class="copyright">
             <div class="grid footer group">
-                <p>© 2016 pingo!</p>
-                <a href="#">Разработка проекта <img src="{% static 'images/sunrise.png' %}" alt="sunrise"></a>
+                <p>© 2016 Sibiti-Kyrgyzstan</p>
+                <a href="http://sunrisestudio.pro" target="_blank">Разработка проекта <img src="{% static 'images/sunrise.png' %}" alt="sunrise"></a>
             </div>
         </div>
     </footer>

@@ -1,17 +1,19 @@
 from django.shortcuts import render
 from sibiti_models.models import *
 
+
 # Create your views here.
 
 
-def register_accommodations(request):
-    accommodation = Accommodations.objects.all().order_by('-id')[:10]
+def index_view(request):
+    accommodation = Accommodations.objects.filter(is_active=True).order_by('-id')[:10]
     usd_currency = 69.2
     hotels = list()
 
     for hotel in accommodation:
         price_usd = round(hotel.price / usd_currency, 2)
         item = dict(
+            id=hotel.id,
             type=hotel.type,
             placement_type=hotel.placement_type,
             guest_count=hotel.guest_count,
@@ -46,3 +48,45 @@ def register_accommodations(request):
     }
 
     return render(request, 'view/index.html', params)
+
+
+def accommodation_info(request, uid):
+    accommodation = Accommodations.objects.get(id=int(uid))
+    usd_currency = 69.2
+    price_usd = round(accommodation.price / usd_currency, 2)
+
+    item = dict(
+        id=accommodation.id,
+        type=accommodation.type,
+        placement_type=accommodation.placement_type,
+        guest_count=accommodation.guest_count,
+        traditional_places_count=accommodation.traditional_places_count,
+        bedroom_count=accommodation.bedroom_count,
+        bed_count=accommodation.bed_count,
+        bath_count=accommodation.bath_count,
+        shower_in_house_count=accommodation.shower_in_house_count,
+        shower_on_street_count=accommodation.shower_on_street_count,
+        bathroom_count=accommodation.bathroom_count,
+        inside_toilet_count=accommodation.inside_toilet_count,
+        inside_turkish_count=accommodation.inside_turkish_count,
+        comfort_settings=accommodation.comfort_settings,
+        preview=accommodation.preview,
+        region=accommodation.region,
+        city=accommodation.city,
+        street=accommodation.street,
+        house_number=accommodation.house_number,
+        coords=accommodation.coords,
+        price=accommodation.price,
+        price_usd=price_usd,
+        title=accommodation.title,
+        description=accommodation.description,
+        check_in_time=accommodation.check_in_time,
+        departure_time=accommodation.departure_time,
+        rate=accommodation.rate
+    )
+
+    params = {
+        'hotel': item
+    }
+
+    return render(request, 'view/accomodation_single.html', params)

@@ -24,7 +24,8 @@ from sibiti_app.views import *
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^admin/', admin.site.urls),
-    url(r'^$', register_accommodations, name='start_register_accommodation'),
+    url(r'^$', index_view, name='index'),
+    url(r'^accommodation/(?P<uid>[0-9]+)/$', accommodation_info, name='accommodation_info')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

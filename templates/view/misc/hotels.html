@@ -1,0 +1,22 @@
+{% load staticfiles %}
+{% for hotel in accommodation %}
+    <div class="hotel">
+        <div class="hotel_img">
+            <a href="{% url 'accommodation_info' uid=hotel.id %}"><img src="{{ hotel.preview.first.content.url }}"
+                                                                       alt="hotel"></a>
+
+            <div class="cost"><span>от</span><br>${{ hotel.price_usd }}</div>
+        </div>
+
+        <div class="hotel_desc">
+            <a href="{% url 'accommodation_info' uid=hotel.id %}"><h5>{{ hotel.title }}</h5></a>
+
+            <p>{{ hotel.type }}, {{ hotel.city }}</p>
+
+            <div class="hotel_rate"><img src="{% static 'images/hotel_rate.png' %}"
+                                         alt="rate">{{ hotel.rate }}</div>
+            <div class="hotel_vote"><img src="{% static 'images/vote_icon.png' %}" alt="icon">17
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -51,7 +51,9 @@ class Accommodations(models.Model):
     check_in_time = models.TimeField(verbose_name='Время заезда')
     departure_time = models.TimeField(verbose_name='Время выезда')
 
-    rate = models.FloatField(null=True, default=0.0, blank=True)
+    rate = models.FloatField(null=True, default=0.0, blank=True, verbose_name='Рейтинг')
+
+    is_active = models.BooleanField(default=True, verbose_name='Активен')
 
     def __unicode__(self):
         return str(self.id)
@@ -72,6 +74,8 @@ class ComfortSettings(models.Model):
 class Media(models.Model):
     class Meta:
         db_table = 'media'
+        verbose_name = 'Медиа'
+        verbose_name_plural = 'Медиа'
 
     content = models.ImageField(upload_to='', verbose_name='Изображение')
     title = models.CharField(max_length=255, verbose_name='Описание')
@@ -83,6 +87,8 @@ class Media(models.Model):
 class Coordinates(models.Model):
     class Meta:
         db_table = 'coordinates'
+        verbose_name = 'Координаты'
+        verbose_name_plural = 'Координаты'
 
     latitude = models.FloatField(verbose_name='Широта')
     longitude = models.FloatField(verbose_name='Долгота')
