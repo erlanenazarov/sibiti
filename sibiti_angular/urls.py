@@ -20,12 +20,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from sibiti_app.views import *
+from sibiti_admin.views import *
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^admin/', admin.site.urls),
     url(r'^$', index_view, name='index'),
-    url(r'^accommodation/(?P<uid>[0-9]+)/$', accommodation_info, name='accommodation_info')
+    url(r'^accommodation/(?P<uid>[0-9]+)/$', accommodation_info, name='accommodation_info'),
+    url(r'^constructor/accommodation/add/', constructor, name='accommodation_constructor')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

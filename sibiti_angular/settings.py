@@ -146,9 +146,9 @@ JET_DEFAULT_THEME = 'light-violet'
 
 JET_THEMES = [
     {
-        'theme': 'default', # theme folder name
-        'color': '#47bac1', # color of the theme's button in user menu
-        'title': 'Default' # theme title
+        'theme': 'default',  # theme folder name
+        'color': '#47bac1',  # color of the theme's button in user menu
+        'title': 'Default'  # theme title
     },
     {
         'theme': 'green',
@@ -176,3 +176,7 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_DOMAIN = None
+
