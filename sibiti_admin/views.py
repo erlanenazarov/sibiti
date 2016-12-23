@@ -6,6 +6,7 @@ import datetime
 from sibiti_angular import settings
 
 from sibiti_models.models import *
+from forms import *
 
 
 # Create your views here.
@@ -26,9 +27,12 @@ def set_cookie(response, key, value, days_expire=7):
 # Accommodation constructor
 
 def constructor(request):
+    form = AccommodationForm
+    comfort_settings = ComfortSettings.objects.all()
 
     params = {
-
+        'accommodation_form': form,
+        'comfort_settings': comfort_settings
     }
 
     return render(request, 'view/user/add_accommodation/constructor.html', params)

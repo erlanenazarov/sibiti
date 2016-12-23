@@ -1,5 +1,7 @@
 {% extends 'view/base.html' %}
 
+{% load widget_tweaks %}
+
 {% load staticfiles %}
 
 {% block title %}Регистрация жилья - шаг 0 - Sibiti Kyrgyzstan{% endblock %}
@@ -9,17 +11,17 @@
         <div class="grid">
 
             <ul class="tabs-menu articles">
-                <li><a href="#tab-1">1. Жилье</a></li>
-                <li><a href="#tab-2">2. Удобства</a></li>
-                <li><a href="#tab-3">3. Фото жилья</a></li>
-                <li><a href="#tab-4">4. Местонахождение</a></li>
-                <li><a href="#tab-5">5. Цена и описание</a></li>
-                <li><a href="#tab-6">6. Правила и сроки</a></li>
-                <li><a href="#tab-7">7. Завершение</a></li>
+                <li><a href="#tab-1" class="tab-header">1. Жилье</a></li>
+                <li><a href="#tab-3" class="tab-header">2. Удобства</a></li>
+                <li><a href="#tab-4" class="tab-header">3. Фото жилья</a></li>
+                <li><a href="#tab-5" class="tab-header">4. Местонахождение</a></li>
+                <li><a href="#tab-6" class="tab-header">5. Цена и описание</a></li>
+                <li><a href="#tab-7" class="tab-header">6. Правила и сроки</a></li>
+                <li><a href="#tab-8" class="tab-header">7. Завершение</a></li>
             </ul>
             <form action="#" method="POST" class="tab">
 
-                <div id="tab-1" class="tab-content">
+                <div id="tab-0" class="tab-content">
                     <div class="introduction">
                         <h2>Давайте подготовим ваше объявление.</h2>
 
@@ -52,7 +54,7 @@
                     </div>
                 </div>
 
-                <div id="tab-1.1" class="tab-content">
+                <div id="tab-1" class="tab-content">
 
                     <div class="step step1">
                         <h2>Какое у вас жилье?</h2>
@@ -61,34 +63,28 @@
 
                         <div class="group">
                             <label for="select1">Тип жилья<br>
-                                <select name="select-name" id="select1">
+                                <select id="select1">
                                     <option selected="" disabled>Выберите пункт</option>
-                                    <option value="1">Квартира</option>
-                                    <option value="2">Юрта</option>
-                                    <!--<optgroup label="Group1">-->
-                                    <!--<option value="1">team 1</option>-->
-                                    <!--<option value="2">team 2</option>-->
-                                    <!--</optgroup>-->
-                                    <option value="3">Дом</option>
+                                    <option>Квартира</option>
+                                    <option>Юрта</option>
+                                    <option>Дом</option>
                                 </select>
+                                {% render_field accommodation_form.type type='hidden' id='house-type' %}
                             </label>
 
                             <label for="select2">Тип размещения<br>
-                                <select name="select-name" id="select2">
+                                <select id="select2">
                                     <option selected="" disabled>Выберите пункт</option>
-                                    <option value="1">Отдельная комната</option>
-                                    <option value="2">Совместная комната</option>
-                                    <!--<optgroup label="Group1">-->
-                                    <!--<option value="1">team 1</option>-->
-                                    <!--<option value="2">team 2</option>-->
-                                    <!--</optgroup>-->
-                                    <option value="3">Отдельная квартира</option>
+                                    <option>Отдельная комната</option>
+                                    <option>Совместная комната</option>
+                                    <option>Отдельная квартира</option>
                                 </select>
+                                {% render_field accommodation_form.placement_type type='hidden' id='placement-type' %}
                             </label>
 
                             <div class="amount">
                                 <label for="number1">Количество гостей<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number1">
+                                    {% render_field accommodation_form.guest_count type='number' value='1' size='5' id='number1' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -96,8 +92,8 @@
                             </div>
 
                             <div class="amount">
-                                <label for="number2">Количество гостей<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number2">
+                                <label for="number2">Количество традиционных мест<br>
+                                    {% render_field accommodation_form.traditional_places_count type='number' value='1' size='5' id='number2' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -105,8 +101,8 @@
                             </div>
 
                             <div class="amount">
-                                <label for="number3">Количество гостей<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number3">
+                                <label for="number3">Количество спален<br>
+                                    {% render_field accommodation_form.bedroom_count type='number' value='1' size='5' id='number3' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -114,8 +110,8 @@
                             </div>
 
                             <div class="amount">
-                                <label for="number4">Количество гостей<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number4">
+                                <label for="number4">Количество спален<br>
+                                    {% render_field accommodation_form.bed_count type='number' value='1' size='5' id='number4' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -123,10 +119,10 @@
                             </div>
 
                             <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
+                                <button type="button" name="button" class="back" data-prev="tab-0"><img
                                         src="{% static 'images/prev.png' %}" alt="prev">назад
                                 </button>
-                                <button type="button" name="button" class="ahead">далее <img
+                                <button type="button" name="button" class="ahead" data-next="tab-2">далее <img
                                         src="{% static 'images/next.png' %}" alt="next"></button>
                             </div>
                         </div>
@@ -135,7 +131,7 @@
 
                 </div>
 
-                <div id="tab-1.2" class="tab-content">
+                <div id="tab-2" class="tab-content">
                     <div class="step step1_1">
                         <h2>Санузлы</h2>
 
@@ -144,8 +140,8 @@
                         <div class="group">
 
                             <div class="amount">
-                                <label for="number5">Баня<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number5">
+                                <label for="number5">Количество бань<br>
+                                    {% render_field accommodation_form.bath_count type='number' value='1' size='5' id='number5' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -153,8 +149,8 @@
                             </div>
 
                             <div class="amount">
-                                <label for="number6">Душ дома<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number6">
+                                <label for="number6">Количество душевых в доме<br>
+                                    {% render_field accommodation_form.shower_in_house_count type='number' value='1' size='5' id='number6' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -163,7 +159,7 @@
 
                             <div class="amount">
                                 <label for="number7">Душ на улице<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number7">
+                                    {% render_field accommodation_form.shower_on_street_count type='number' value='1' size='5' id='number7' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -172,7 +168,7 @@
 
                             <div class="amount">
                                 <label for="number8">Ванная комната<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number8">
+                                    {% render_field accommodation_form.bathroom_count type='number' value='1' size='5' id='number8' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -181,7 +177,7 @@
 
                             <div class="amount">
                                 <label for="number9">Внутренний туалет. Унитаз<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number9">
+                                    {% render_field accommodation_form.inside_toilet_count type='number' value='1' size='5' id='number9' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -190,7 +186,7 @@
 
                             <div class="amount">
                                 <label for="number10">Внутренний туалет. Турецкий<br>
-                                    <input type="number" value="1" size="5" maxlength="3" id="number10">
+                                    {% render_field accommodation_form.inside_turkish_count type='number' value='1' size='5' id='number10' %}
                                 </label>
 
                                 <div class="minus"><img src="{% static 'images/minus.png' %}" alt="minus"></div>
@@ -199,80 +195,11 @@
 
 
                             <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
-                                        src="{% static 'images/prev.png' %}" alt="prev">
-                                    назад
+                                <button type="button" name="button" class="back" data-prev="tab-1"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
                                 </button>
-                                <button type="button" name="button" class="ahead">далее <img
-                                        src="{% static 'images/next.png' %}"
-                                        alt="next"></button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div id="tab-2" class="tab-content">
-                    <div class="step step2">
-                        <h2>Какие удобства вы предлагаете?</h2>
-
-                        <div class="line"></div>
-
-                        <div class="group">
-                            <div class="checkbox">
-                                <input id="check1" type="checkbox" name="check" value="check1">
-                                <label for="check1">Туалетные принадлежности</label>
-
-                                <input id="check2" type="checkbox" name="check" value="check2">
-                                <label for="check2">Завтрак, кофе, чай </label>
-
-                                <input id="check3" type="checkbox" name="check" value="check2">
-                                <label for="check3">Wi-Fi</label>
-
-                                <input id="check4" type="checkbox" name="check" value="check2">
-                                <label for="check4">Стол/рабочее место </label>
-
-                                <input id="check5" type="checkbox" name="check" value="check2">
-                                <label for="check5">Шампунь </label>
-
-                                <input id="check6" type="checkbox" name="check" value="check2">
-                                <label for="check6">Камин </label>
-
-                                <input id="check7" type="checkbox" name="check" value="check2">
-                                <label for="check7">Шкаф/комод </label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input id="check8" type="checkbox" name="check" value="check2">
-                                <label for="check8">Утюг </label>
-
-                                <input id="check9" type="checkbox" name="check" value="check2">
-                                <label for="check9">Телевизор </label>
-
-                                <input id="check10" type="checkbox" name="check" value="check2">
-                                <label for="check10">Фен </label>
-
-                                <input id="check11" type="checkbox" name="check" value="check2">
-                                <label for="check11">Отопление </label>
-
-                                <input id="check12" type="checkbox" name="check" value="check2">
-                                <label for="check12">Животные в доме </label>
-
-                                <input id="check13" type="checkbox" name="check" value="check2">
-                                <label for="check13">Кондиционер </label>
-
-                                <input id="check14" type="checkbox" name="check" value="check2">
-                                <label for="check14">Газеты/Журналы</label>
-                            </div>
-
-                            <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
-                                        src="{% static 'images/prev.png' %}" alt="prev">
-                                    назад
-                                </button>
-                                <button type="button" name="button" class="ahead">далее <img
-                                        src="{% static 'images/next.png' %}"
-                                        alt="next"></button>
+                                <button type="button" name="button" class="ahead" data-next="tab-3">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
                             </div>
 
                         </div>
@@ -280,6 +207,73 @@
                 </div>
 
                 <div id="tab-3" class="tab-content">
+                    <div class="step step2">
+                        <h2>Какие удобства вы предлагаете?</h2>
+
+                        <div class="line"></div>
+
+                        <div class="group">
+                            <div class="checkbox">
+                                {% for item in comfort_settings|slice:'0:6' %}
+                                    <input class="comfort-check" id="comfort-id-{{ item.id }}" type="checkbox" name="comfort_setting">
+                                    <label for="comfort-id-{{ item.id }}">{{ item.title }}</label>
+                                {% endfor %}
+
+{#                                <input id="check2" type="checkbox" name="check" value="false">#}
+{#                                <label for="check2">Завтрак, кофе, чай </label>#}
+{##}
+{#                                <input id="check3" type="checkbox" name="check" value="false">#}
+{#                                <label for="check3">Wi-Fi</label>#}
+{##}
+{#                                <input id="check4" type="checkbox" name="check" value="false">#}
+{#                                <label for="check4">Стол/рабочее место </label>#}
+{##}
+{#                                <input id="check5" type="checkbox" name="check" value="false">#}
+{#                                <label for="check5">Шампунь </label>#}
+{##}
+{#                                <input id="check6" type="checkbox" name="check" value="false">#}
+{#                                <label for="check6">Камин </label>#}
+{##}
+{#                                <input id="check7" type="checkbox" name="check" value="false">#}
+{#                                <label for="check7">Шкаф/комод </label>#}
+                            </div>
+
+                            <div class="checkbox">
+                                <input id="check8" type="checkbox" name="check" value="false">
+                                <label for="check8">Утюг </label>
+
+                                <input id="check9" type="checkbox" name="check" value="false">
+                                <label for="check9">Телевизор </label>
+
+                                <input id="check10" type="checkbox" name="check" value="false">
+                                <label for="check10">Фен </label>
+
+                                <input id="check11" type="checkbox" name="check" value="false">
+                                <label for="check11">Отопление </label>
+
+                                <input id="check12" type="checkbox" name="check" value="false">
+                                <label for="check12">Животные в доме </label>
+
+                                <input id="check13" type="checkbox" name="check" value="false">
+                                <label for="check13">Кондиционер </label>
+
+                                <input id="check14" type="checkbox" name="check" value="false">
+                                <label for="check14">Газеты/Журналы</label>
+                            </div>
+
+                            <div class="prevnext group">
+                                <button type="button" name="button" class="back" data-prev="tab-2"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
+                                </button>
+                                <button type="button" name="button" class="ahead" data-next="tab-4">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-4" class="tab-content">
                     <div class="step step3">
                         <h2>Как выглядит ваше жилье</h2>
 
@@ -332,12 +326,20 @@
                             <!--<div class="controls"><p>Add Another Image</p></div>-->
                             <!--</div>-->
 
+                            <div class="prevnext group">
+                                <button type="button" name="button" class="back" data-prev="tab-3"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
+                                </button>
+                                <button type="button" name="button" class="ahead" data-next="tab-5">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
 
-                <div id="tab-4" class="tab-content">
+                <div id="tab-5" class="tab-content">
                     <div class="step step4">
                         <h2>Где находится ваше жилье?</h2>
 
@@ -380,14 +382,11 @@
 
 
                             <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
-                                        src="{% static 'images/prev.png' %}"
-                                        alt="prev">
-                                    назад
+                                <button type="button" name="button" class="back" data-prev="tab-4"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
                                 </button>
-                                <button type="button" name="button" class="ahead">далее <img
-                                        src="{% static 'images/next.png' %}"
-                                        alt="next"></button>
+                                <button type="button" name="button" class="ahead" data-next="tab-6">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
                             </div>
 
                         </div>
@@ -405,7 +404,7 @@
                     </div>
                 </div>
 
-                <div id="tab-5" class="tab-content">
+                <div id="tab-6" class="tab-content">
                     <div class="step step5">
                         <h2>Цена и описание жилья</h2>
 
@@ -427,13 +426,11 @@
 
 
                             <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
-                                        src="{% static 'images/prev.png' %}" alt="prev">
-                                    назад
+                                <button type="button" name="button" class="back" data-prev="tab-5"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
                                 </button>
-                                <button type="button" name="button" class="ahead">далее <img
-                                        src="{% static 'images/next.png' %}"
-                                        alt="next"></button>
+                                <button type="button" name="button" class="ahead" data-next="tab-7">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
                             </div>
 
                         </div>
@@ -441,7 +438,7 @@
                     </div>
                 </div>
 
-                <div id="tab-6" class="tab-content">
+                <div id="tab-7" class="tab-content">
                     <div class="step step6">
                         <h2>Правила и сроки сдачи жилья</h2>
 
@@ -476,13 +473,11 @@
 
 
                             <div class="prevnext group">
-                                <button type="button" name="button" class="back"><img
-                                        src="{% static 'images/prev.png' %}" alt="prev">
-                                    назад
+                                <button type="button" name="button" class="back" data-prev="tab-6"><img
+                                        src="{% static 'images/prev.png' %}" alt="prev">назад
                                 </button>
-                                <button type="button" name="button" class="ahead">далее <img
-                                        src="{% static 'images/next.png' %}"
-                                        alt="next"></button>
+                                <button type="button" name="button" class="ahead" data-next="tab-8">далее <img
+                                        src="{% static 'images/next.png' %}" alt="next"></button>
                             </div>
 
                         </div>
@@ -490,7 +485,7 @@
                     </div>
                 </div>
 
-                <div id="tab-7" class="tab-content">
+                <div id="tab-8" class="tab-content">
                     <div class="introduction">
                         <h2>Вы готовы принимать гостей!</h2>
 
@@ -507,12 +502,13 @@
                         </p>
 
                         <div class="buttons">
-                            <button type="button" name="button" class="back"><img src="{% static 'images/prev.png' %}"
-                                                                                  alt="prev">
-                                назад
+                            <button type="button" name="button" class="back" data-prev="tab-7"><img
+                                    src="{% static 'images/prev.png' %}" alt="prev">назад
                             </button>
-                            <button type="button" name="button" class="button">завершить и опубликовать</button>
-                            <button type="button" name="button" class="button">завершить</button>
+                            <button type="button" name="button" class="button" id="finish-and-publish">завершить и
+                                опубликовать
+                            </button>
+                            <button type="button" name="button" class="button" id="finish">завершить</button>
                         </div>
                     </div>
 
@@ -539,6 +535,26 @@
         var tabs = $('.tab-content');
         var tabs_array = [];
         $(document).ready(function () {
+
+            var plus = $('.plus');
+            var minus = $('.minus');
+
+            $(plus).on('click', function (event) {
+                var input = $(this).parent().find('label > input[type="number"]');
+                var value = parseInt($(input).val());
+                value++;
+                $(input).val(value);
+            });
+
+            $(minus).on('click', function (event) {
+                var input = $(this).parent().find('label > input[type="number"]');
+                var value = parseInt($(input).val());
+                if (value > 0) {
+                    value--;
+                }
+                $(input).val(value);
+            });
+
             $(tabs).each(function (i, obj) {
                 $(obj).prepend('<div class="ajax-loader"><img src="{% static 'images/spin.gif' %}"/></div>');
                 tabs_array[i] = obj;
@@ -548,7 +564,7 @@
             });
 
             $('#start_session').on('click', function (event) {
-                var loader = $('#tab-1 .ajax-loader');
+                var loader = $('#tab-0 .ajax-loader');
                 $(loader).fadeIn('slow');
                 var timer = setTimeout(function () {
                     $(tabs_array[0]).fadeOut('slow', function () {
@@ -558,6 +574,90 @@
                         });
                     });
                 }, 1000);
+            });
+
+            $('.ahead').each(function (o, obj) {
+                $(obj).on('click', function (event) {
+                    var target = $(this).attr('data-next');
+                    var nextTabIndex = target[target.length - 1];
+                    var currentTabIndex = nextTabIndex - 1;
+                    var loader = $('#tab-' + currentTabIndex + ' .ajax-loader');
+                    $(loader).fadeIn('slow');
+                    var timer = setTimeout(function () {
+                        $(tabs).each(function (j, obj2) {
+                            if ($(obj2).attr('id') == target) {
+                                $(obj2).fadeIn('slow', function () {
+                                    if (nextTabIndex != 2) {
+                                        $('.tab-header').each(function (k, header_link) {
+                                            if ($(header_link).attr('href') == '#' + target) {
+                                                if (!$(header_link).parent().hasClass('current')) {
+                                                    $(header_link).parent().addClass('current');
+                                                }
+                                            } else {
+                                                if ($(header_link).parent().hasClass('current')) {
+                                                    $(header_link).parent().removeClass('current')
+                                                            .addClass('past');
+                                                }
+                                            }
+                                        })
+                                    }
+                                });
+                            } else {
+                                $(obj2).fadeOut('slow');
+                            }
+                        });
+                        $(loader).fadeOut('slow');
+                    }, 1000);
+                })
+            });
+
+            $('.back').each(function (i, obj) {
+                $(obj).on('click', function (event) {
+                    var prevTab = $(this).attr('data-prev');
+                    var currentTab = parseInt(prevTab[prevTab.length - 1]) + 1;
+                    var loader = $('#tab-' + currentTab + ' .ajax-loader');
+
+                    $(loader).fadeIn('slow');
+
+                    var timer = setTimeout(function () {
+                        $(tabs).each(function (j, tab) {
+                            if ($(tab).attr('id') == prevTab) {
+                                $(tab).fadeIn('slow');
+                            } else {
+                                $(tab).fadeOut('slow');
+                            }
+                        });
+                        $(loader).fadeOut('slow');
+                        $('.tab-header').each(function (k, link) {
+                            if ($(link).attr('href') == '#tab-' + currentTab) {
+                                if ($(link).parent().hasClass('current')) {
+                                    $(link).parent().removeClass('current');
+                                }
+                            }
+                            {#                            console.log(prevTab);#}
+                            if ($(link).attr('href') == '#' + prevTab) {
+                                if ($(link).parent().hasClass('past')) {
+                                    $(link).parent().removeClass('past');
+                                    $(link).parent().addClass('current');
+                                }
+                            }
+                        });
+                    }, 1000);
+                })
+            });
+
+            $('.tab-header').each(function (i, obj) {
+                $(obj).on('click', function (event) {
+                    event.preventDefault();
+                });
+            });
+
+            $('#select1').on('change', function (event) {
+                $('#house-type').val($(this).val());
+            });
+
+            $('#select2').on('change', function (event) {
+                $('#placement-type').val($(this).val());
             });
         });
     </script>

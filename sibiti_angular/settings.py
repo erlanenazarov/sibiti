@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sibiti_models',
     'sibiti_app',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE_CLASSES = [
