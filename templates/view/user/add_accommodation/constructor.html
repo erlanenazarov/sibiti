@@ -64,17 +64,18 @@
                         <div class="group">
                             <label for="select1">Тип жилья<br>
                                 <select id="select1">
-                                    <option selected="" disabled>Выберите пункт</option>
-                                    <option>Квартира</option>
-                                    <option>Юрта</option>
-                                    <option>Дом</option>
+                                    <option selected disabled>Выберите пункт</option>
+                                    <option>Гостевой дом</option>
+                                    <option>Юрточный лагерь</option>
+                                    <option>Гостиница</option>
+                                    <option>Home stay</option>
                                 </select>
                                 {% render_field accommodation_form.type type='hidden' id='house-type' %}
                             </label>
 
                             <label for="select2">Тип размещения<br>
                                 <select id="select2">
-                                    <option selected="" disabled>Выберите пункт</option>
+                                    <option selected disabled>Выберите пункт</option>
                                     <option>Отдельная комната</option>
                                     <option>Совместная комната</option>
                                     <option>Отдельная квартира</option>
@@ -214,51 +215,57 @@
 
                         <div class="group">
                             <div class="checkbox">
-                                {% for item in comfort_settings|slice:'0:6' %}
-                                    <input class="comfort-check" id="comfort-id-{{ item.id }}" type="checkbox" name="comfort_setting">
+                                {% for item in comfort_settings|slice:'0:7' %}
+                                    <input class="comfort-check" id="comfort-id-{{ item.id }}" type="checkbox"
+                                           name="comfort_setting">
                                     <label for="comfort-id-{{ item.id }}">{{ item.title }}</label>
                                 {% endfor %}
 
-{#                                <input id="check2" type="checkbox" name="check" value="false">#}
-{#                                <label for="check2">Завтрак, кофе, чай </label>#}
-{##}
-{#                                <input id="check3" type="checkbox" name="check" value="false">#}
-{#                                <label for="check3">Wi-Fi</label>#}
-{##}
-{#                                <input id="check4" type="checkbox" name="check" value="false">#}
-{#                                <label for="check4">Стол/рабочее место </label>#}
-{##}
-{#                                <input id="check5" type="checkbox" name="check" value="false">#}
-{#                                <label for="check5">Шампунь </label>#}
-{##}
-{#                                <input id="check6" type="checkbox" name="check" value="false">#}
-{#                                <label for="check6">Камин </label>#}
-{##}
-{#                                <input id="check7" type="checkbox" name="check" value="false">#}
-{#                                <label for="check7">Шкаф/комод </label>#}
+                                {#                                <input id="check2" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check2">Завтрак, кофе, чай </label>#}
+                                {##}
+                                {#                                <input id="check3" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check3">Wi-Fi</label>#}
+                                {##}
+                                {#                                <input id="check4" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check4">Стол/рабочее место </label>#}
+                                {##}
+                                {#                                <input id="check5" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check5">Шампунь </label>#}
+                                {##}
+                                {#                                <input id="check6" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check6">Камин </label>#}
+                                {##}
+                                {#                                <input id="check7" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check7">Шкаф/комод </label>#}
                             </div>
 
                             <div class="checkbox">
-                                <input id="check8" type="checkbox" name="check" value="false">
-                                <label for="check8">Утюг </label>
-
-                                <input id="check9" type="checkbox" name="check" value="false">
-                                <label for="check9">Телевизор </label>
-
-                                <input id="check10" type="checkbox" name="check" value="false">
-                                <label for="check10">Фен </label>
-
-                                <input id="check11" type="checkbox" name="check" value="false">
-                                <label for="check11">Отопление </label>
-
-                                <input id="check12" type="checkbox" name="check" value="false">
-                                <label for="check12">Животные в доме </label>
-
-                                <input id="check13" type="checkbox" name="check" value="false">
-                                <label for="check13">Кондиционер </label>
-
-                                <input id="check14" type="checkbox" name="check" value="false">
-                                <label for="check14">Газеты/Журналы</label>
+                                {% for item in comfort_settings|slice:'7:14' %}
+                                    <input class="comfort-check" id="comfort-id-{{ item.id }}" type="checkbox"
+                                           name="comfort_setting">
+                                    <label for="comfort-id-{{ item.id }}">{{ item.title }}</label>
+                                {% endfor %}
+                                {#                                <input id="check8" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check8">Утюг </label>#}
+                                {##}
+                                {#                                <input id="check9" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check9">Телевизор </label>#}
+                                {##}
+                                {#                                <input id="check10" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check10">Фен </label>#}
+                                {##}
+                                {#                                <input id="check11" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check11">Отопление </label>#}
+                                {##}
+                                {#                                <input id="check12" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check12">Животные в доме </label>#}
+                                {##}
+                                {#                                <input id="check13" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check13">Кондиционер </label>#}
+                                {##}
+                                {#                                <input id="check14" type="checkbox" name="check" value="false">#}
+                                {#                                <label for="check14">Газеты/Журналы</label>#}
                             </div>
 
                             <div class="prevnext group">
@@ -284,42 +291,42 @@
 
                             <div class="control-group file-upload" id="file-upload1">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_1"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_1 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload2">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_2"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_2 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload3">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_3"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_3 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload4">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_4"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_4 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload5">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_5"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_5 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload6">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_6"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_6 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload7">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_7"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_7 type='file' %}</div>
                             </div>
 
                             <div class="control-group file-upload" id="file-upload8">
                                 <div class="image-box text-center"><img src="" alt=""></div>
-                                <div class="controls"><input type="file" name="contact_image_8"/></div>
+                                <div class="controls">{% render_field accommodation_form.image_8 type='file' %}</div>
                             </div>
 
                             <!--<div class="control-group reveal-file">-->
@@ -346,38 +353,36 @@
                         <div class="line"></div>
 
                         <div class="group">
-                            <label for="select3">Регион<br>
-                                <select name="select-name" id="select3">
-                                    <option selected="" disabled>Выберите пункт</option>
-                                    <option value="1">Квартира</option>
-                                    <option value="2">Юрта</option>
+                            <label for="region-select">Регион<br>
+                                <select id="region-select">
+                                    <option selected disabled>Выберите пункт</option>
+                                    <option>Квартира</option>
+                                    <option>Юрта</option>
                                     <!--<optgroup label="Group1">-->
                                     <!--<option value="1">team 1</option>-->
                                     <!--<option value="2">team 2</option>-->
                                     <!--</optgroup>-->
-                                    <option value="3">Дом</option>
+                                    <option>Дом</option>
+                                    {% render_field accommodation_form.region type='hidden' id='region' %}
                                 </select>
                             </label>
 
-                            <label for="select4">Город / Район<br>
-                                <select name="select-name" id="select4">
-                                    <option selected="" disabled>Выберите пункт</option>
-                                    <option value="1">Отдельная комната</option>
-                                    <option value="2">Совместная комната</option>
-                                    <!--<optgroup label="Group1">-->
-                                    <!--<option value="1">team 1</option>-->
-                                    <!--<option value="2">team 2</option>-->
-                                    <!--</optgroup>-->
-                                    <option value="3">Отдельная квартира</option>
+                            <label for="city-select">Город / Район<br>
+                                <select id="city-select">
+                                    <option selected disabled>Выберите пункт</option>
+                                    <option>Отдельная комната</option>
+                                    <option>Совместная комната</option>
+                                    <option>Отдельная квартира</option>
                                 </select>
+                                {% render_field accommodation_form.city type='hidden' id='city' %}
                             </label>
 
                             <label for="text1">Улица<br>
-                                <input type="text" name="street" id="text1">
+                                {% render_field accommodation_form.street type='text' id='text1' %}
                             </label>
 
                             <label for="number11">Номер дома<br>
-                                <input type="number" name="number" id="number11">
+                                {% render_field accommodation_form.house_number type='number' id='number11' %}
                             </label>
 
 
@@ -413,15 +418,16 @@
                         <div class="group">
 
                             <label for="text2">Базовая цена за сутки<br>
-                                <input type="text" name="price" id="text2">
+                                {% render_field accommodation_form.price type='number' %}
                             </label>
 
                             <label for="text3">Назовите свое жилье<br>
-                                <input type="text" name="name" id="text3">
+                                {% render_field accommodation_form.title type='text' %}
                             </label>
 
                             <label for="comments">Опишите ваше жилье<br>
-                                <textarea name="comments" id="comments" cols="20" rows="10" placeholder=""></textarea>
+{#                                <textarea name="comments" id="comments" cols="20" rows="10" placeholder=""></textarea>#}
+                                {% render_field accommodation_form.description cols='20' rows='10' placeholder='' %}
                             </label>
 
 
@@ -445,22 +451,42 @@
                         <div class="line"></div>
 
                         <div class="group">
-                            <label for="select5">Врямя заезда<br>
-                                <select name="select-name" id="select5">
-                                    <option value="1">12:00</option>
-                                    <option value="2">13:00</option>
-                                    <option value="2">14:00</option>
-                                    <option value="2">15:00</option>
+                            <label for="time-select-1">Врямя заезда<br>
+                                <select id="time-select-1">
+                                    <option>12:00</option>
+                                    <option>13:00</option>
+                                    <option>14:00</option>
+                                    <option>15:00</option>
+                                    <option>16:00</option>
+                                    <option>17:00</option>
+                                    <option>18:00</option>
+                                    <option>19:00</option>
+                                    <option>20:00</option>
+                                    <option>21:00</option>
+                                    <option>22:00</option>
+                                    <option>23:00</option>
+                                    <option>00:00</option>
                                 </select>
+                                {% render_field accommodation_form.check_in_time type='hidden' %}
                             </label>
 
-                            <label for="select6">Врямя выезда<br>
-                                <select name="select-name" id="select6">
-                                    <option value="1">12:00</option>
-                                    <option value="2">13:00</option>
-                                    <option value="2">14:00</option>
-                                    <option value="2">15:00</option>
+                            <label for="time-select-2">Врямя выезда<br>
+                                <select id="time-select-2">
+                                    <option>12:00</option>
+                                    <option>13:00</option>
+                                    <option>14:00</option>
+                                    <option>15:00</option>
+                                    <option>16:00</option>
+                                    <option>17:00</option>
+                                    <option>18:00</option>
+                                    <option>19:00</option>
+                                    <option>20:00</option>
+                                    <option>21:00</option>
+                                    <option>22:00</option>
+                                    <option>23:00</option>
+                                    <option>00:00</option>
                                 </select>
+                                {% render_field accommodation_form.departure_time type='hidden' %}
                             </label>
 
                             <div class="checkbox">
@@ -659,6 +685,29 @@
             $('#select2').on('change', function (event) {
                 $('#placement-type').val($(this).val());
             });
+
+            $('#time-select-1').on('change', function (event) {
+                $('')
+            });
+
+            $('.image-box').click(function (event) {
+                var imgg = $(this).children('img');
+                $(this).siblings().children("input").trigger('click');
+
+                $(this).siblings().children("input").change(function () {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        var urll = e.target.result;
+                        $(imgg).attr('src', urll);
+                        imgg.parent().css('background', 'transparent');
+                        imgg.show();
+                        imgg.siblings('p').hide();
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                });
+            });
         });
+
     </script>
 {% endblock %}
