@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Sibiti - Kyrgyzstan{% endblock %}</title>
+    <title>{% block title %}CBT - Kyrgyzstan{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
@@ -32,11 +32,11 @@
             .tour:hover > img {
                 zoom: 1.1;
 
-                -webkit-transition: all 0.5s;
-                -moz-transition: all 0.5s;
-                -ms-transition: all 0.5s;
-                -o-transition: all 0.5s;
-                transition: all 0.5s;
+                -webkit-transition: zoom 0.5s;
+                -moz-transition: zoom 0.5s;
+                -ms-transition: zoom 0.5s;
+                -o-transition: zoom 0.5s;
+                transition: zoom 0.5s;
             }
 
             a {
@@ -138,7 +138,11 @@
 {% block javascripts %}
     <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
     <script src="{% static 'slick/slick.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
+{#    <script src="{% static 'js/script.js' %}"></script>#}
+{% endblock %}
+
+{% block custom_scripts %}
+
 {% endblock %}
 
 </body>

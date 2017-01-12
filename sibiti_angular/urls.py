@@ -27,7 +27,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index_view, name='index'),
     url(r'^accommodation/(?P<uid>[0-9]+)/$', accommodation_info, name='accommodation_info'),
-    url(r'^constructor/accommodation/add/', constructor, name='accommodation_constructor')
+    url(r'^constructor/accommodation/add$', constructor, name='accommodation_constructor'),
+    url(r'^search/accommodation$', search_accommodations, name='accommodation_search'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -53,7 +53,11 @@ class Accommodations(models.Model):
 
     rate = models.FloatField(null=True, default=0.0, blank=True, verbose_name='Рейтинг')
 
+    is_automatic = models.BooleanField(default=False, verbose_name='Мгновенное бронирование')
+
     is_active = models.BooleanField(default=True, verbose_name='Активен')
+    has_certificate = models.BooleanField(default=False, verbose_name='Сертификат CBT')
+    stars = models.ManyToManyField('Star', verbose_name='Звёзды', null=True, blank=True)
 
     def __unicode__(self):
         return str(self.id)
@@ -93,6 +97,19 @@ class Coordinates(models.Model):
     latitude = models.FloatField(verbose_name='Широта')
     longitude = models.FloatField(verbose_name='Долгота')
     title = models.CharField(max_length=255, verbose_name='Наименование марки')
+
+    def __unicode__(self):
+        return self.title
+
+
+class Star(models.Model):
+    class Meta:
+        db_table = 'star'
+        verbose_name = 'Звёзда'
+        verbose_name_plural = 'Звёзды'
+
+    title = models.CharField(max_length=255, verbose_name='Наименование')
+    preview = models.ImageField(upload_to='', verbose_name='Изображение')
 
     def __unicode__(self):
         return self.title

@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from sibiti_models.models import *
+from forms import *
 
 
 # Create your views here.
+
+def generate_view_params(request):
+    params = {
+    }
+    return params
 
 
 def index_view(request):
@@ -44,7 +50,8 @@ def index_view(request):
         hotels.append(item)
 
     params = {
-        'accommodation': hotels
+        'accommodation': hotels,
+        'accommodation_search_form': AccommodationSearchForm
     }
 
     return render(request, 'view/index.html', params)
@@ -90,3 +97,15 @@ def accommodation_info(request, uid):
     }
 
     return render(request, 'view/accomodation_single.html', params)
+
+
+def search_accommodations(request):
+    filter_form = AccommodationSearchForm(request.POST)
+    params = {
+        'filter_form': filter_form
+    }
+    if request.POST:
+
+        pass
+    return render(request, 'view/accommodation_search_result.html', params)
+

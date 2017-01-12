@@ -1,7 +1,7 @@
 {% extends 'view/base.html' %}
 
 {% load staticfiles %}
-
+{% load widget_tweaks %}
 
 {% block content %}
     <div class="bg1">
@@ -12,11 +12,15 @@
                 самые
                 живописные уголки восточной страны.</p>
 
-            <form method="post" action="#" class="group">
-                <input type="search" name="name" placeholder="Куда собираетесь?">
-                <input type="date" name="number" placeholder="Заезд">
-                <input type="date" name="number" placeholder="Отъезд">
-                <button type="button" name="button"></button>
+            <form method="post" action="{% url 'accommodation_search' %}" class="group">
+{#                <input type="search" name="name" placeholder="Куда собираетесь?">#}
+                {% render_field accommodation_search_form.direction type='search' placeholder='Куда собираетесь?' %}
+{#                <input type="date" name="number" placeholder="Заезд">#}
+                {% render_field accommodation_search_form.check_in_date placeholder='Заезд' type='date' %}
+{#                <input type="date" name="number" placeholder="Отъезд">#}
+                {% render_field accommodation_search_form.check_out_date placeholder='Отъезд' type='date' %}
+                <button type="submit" name="button"></button>
+                {% csrf_token %}
             </form>
         </div>
     </div>
