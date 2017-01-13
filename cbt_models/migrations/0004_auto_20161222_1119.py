@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('sibiti_models', '0003_accommodations_is_active'),
+        ('cbt_models', '0003_accommodations_is_active'),
     ]
 
     operations = [
@@ -53,12 +53,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='accommodations',
             name='comfort_settings',
-            field=models.ManyToManyField(blank=True, null=True, to='sibiti_models.ComfortSettings', verbose_name='\u0423\u0434\u043e\u0431\u0441\u0442\u0432\u0430'),
+            field=models.ManyToManyField(blank=True, null=True, to='cbt_models.ComfortSettings', verbose_name='\u0423\u0434\u043e\u0431\u0441\u0442\u0432\u0430'),
         ),
         migrations.AlterField(
             model_name='accommodations',
             name='coords',
-            field=models.ManyToManyField(blank=True, null=True, to='sibiti_models.Coordinates', verbose_name='\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b'),
+            field=models.ManyToManyField(blank=True, null=True, to='cbt_models.Coordinates', verbose_name='\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b'),
         ),
         migrations.AlterField(
             model_name='accommodations',
@@ -103,7 +103,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='accommodations',
             name='preview',
-            field=models.ManyToManyField(blank=True, null=True, to='sibiti_models.Media', verbose_name='\u0424\u043e\u0442\u043e \u0436\u0438\u043b\u044c\u044f'),
+            field=models.ManyToManyField(blank=True, null=True, to='cbt_models.Media', verbose_name='\u0424\u043e\u0442\u043e \u0436\u0438\u043b\u044c\u044f'),
         ),
         migrations.AlterField(
             model_name='accommodations',

@@ -1,5 +1,5 @@
 from django import forms
-from sibiti_models.models import *
+from cbt_models.models import *
 
 # Accommodation
 

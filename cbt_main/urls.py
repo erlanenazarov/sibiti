@@ -19,8 +19,8 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from sibiti_app.views import *
-from sibiti_admin.views import *
+from cbt_app.views import *
+from cbt_admin.views import *
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS

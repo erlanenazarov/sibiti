@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class SibitiAppConfig(AppConfig):
-    name = 'sibiti_app'
+    name = 'cbt_app'

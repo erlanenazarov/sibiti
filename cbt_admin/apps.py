@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class SibitiAdminConfig(AppConfig):
-    name = 'sibiti_admin'
+    name = 'cbt_admin'

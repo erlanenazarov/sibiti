@@ -3,9 +3,9 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import datetime
-from sibiti_angular import settings
+from cbt_main import settings
 
-from sibiti_models.models import *
+from cbt_models.models import *
 from forms import *
 
 

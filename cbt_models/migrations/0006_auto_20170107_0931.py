@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('sibiti_models', '0005_accommodations_has_certificate'),
+        ('cbt_models', '0005_accommodations_has_certificate'),
     ]
 
     operations = [
@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='accommodations',
             name='stars',
-            field=models.ManyToManyField(blank=True, null=True, to='sibiti_models.Star', verbose_name='\u0417\u0432\u0451\u0437\u0434\u044b'),
+            field=models.ManyToManyField(blank=True, null=True, to='cbt_models.Star', verbose_name='\u0417\u0432\u0451\u0437\u0434\u044b'),
         ),
     ]

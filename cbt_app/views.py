@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from sibiti_models.models import *
+from cbt_models.models import *
 from forms import *
 
 

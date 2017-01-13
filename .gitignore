@@ -17,5 +17,5 @@ tests/.coverage
 build/
 tests/report/
 .idea/
-sibiti_angular/parameters.py
+cbt_main/parameters.py
 /static

@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sibiti_models',
-    'sibiti_app',
+    'cbt_models',
+    'cbt_app',
     'widget_tweaks'
 ]
 
@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sibiti_angular.urls'
+ROOT_URLCONF = 'cbt_main.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sibiti_angular.wsgi.application'
+WSGI_APPLICATION = 'cbt_main.wsgi.application'
 
 
 # Database
