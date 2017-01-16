@@ -7,6 +7,7 @@ from models import *
 class AccommodationAdmin(admin.ModelAdmin):
     list_display = 'title price type guest_count'.split()
     list_filter = 'price type guest_count'.split()
+    search_fields = 'title price'.split()
 
 
 admin.site.register(Accommodations, AccommodationAdmin)
@@ -14,3 +15,4 @@ admin.site.register(ComfortSettings)
 admin.site.register(Media)
 admin.site.register(Coordinates)
 admin.site.register(Star)
+admin.site.register(DateHelper)

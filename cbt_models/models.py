@@ -14,7 +14,7 @@ class Accommodations(models.Model):
         verbose_name_plural = 'Жилища'
 
     # Main Information =============================================================
-    type = models.CharField(max_length=255, verbose_name='Тип жилья', null=True, blank=True)
+    type = models.ForeignKey('AccommodationType', verbose_name=u'Тип жилья', null=True, blank=True)
     placement_type = models.CharField(max_length=255, verbose_name='Тип размещения', null=True, blank=True)
     guest_count = models.IntegerField(verbose_name='Количество гостей', null=True, blank=True)
     traditional_places_count = models.IntegerField(verbose_name='Количество традиционных мест', null=True, blank=True)
@@ -27,10 +27,24 @@ class Accommodations(models.Model):
     shower_on_street_count = models.IntegerField(verbose_name='Количество душевых на улице', null=True, blank=True)
     bathroom_count = models.IntegerField(verbose_name='Количество ванных', null=True, blank=True)
     inside_toilet_count = models.IntegerField(verbose_name='Внутренний туалет. Унитаз', null=True, blank=True)
-    inside_turkish_count = models.IntegerField(verbose_name='Внетренний туалет. Турецкий', null=True, blank=True)
+    outside_toilet_count = models.IntegerField(verbose_name='Внешний туалет.', null=True, blank=True)
 
     # Comfort =======================================================================
     comfort_settings = models.ManyToManyField('ComfortSettings', verbose_name='Удобства', null=True, blank=True)
+    # wi_fi_internet = models.BooleanField(default=False, verbose_name='Wi-Fi')
+    # tv = models.BooleanField(default=False, verbose_name='Телевизор')
+    # kitchen = models.BooleanField(default=False, verbose_name='Кухня')
+    # breakfast = models.BooleanField(default=False, verbose_name='Завтрак')
+    # bedroom_secure = models.BooleanField(default=False, verbose_name='Замок в спальню')
+    # internet = models.BooleanField(default=False, verbose_name='Интернет')
+    # kab_tv = models.BooleanField(default=False, verbose_name='Кабельное телевиденье')
+    # fireplace = models.BooleanField(default=False, verbose_name='Камин')
+    # air_condition = models.BooleanField(default=False, verbose_name='Кондиционер')
+    # working_place = models.BooleanField(default=False, verbose_name='Место для работы на ноутбуке')
+    # heating = models.BooleanField(default=False, verbose_name='Отопление')
+    # hanger = models.BooleanField(default=False, verbose_name='Плечики')
+    # family_children_available = models.BooleanField(default=False, verbose_name='Подходит для детей/семьи')
+    # check_in_time_fully = models.BooleanField(default=False, verbose_name='Прибытие кругло суточно')
 
     # Preview =======================================================================
     preview = models.ManyToManyField('Media', verbose_name='Фото жилья', null=True, blank=True)
@@ -59,6 +73,10 @@ class Accommodations(models.Model):
     has_certificate = models.BooleanField(default=False, verbose_name='Сертификат CBT')
     stars = models.ManyToManyField('Star', verbose_name='Звёзды', null=True, blank=True)
 
+    reserved_days = models.ManyToManyField('DateHelper', verbose_name='Зарезервированные дни', related_name='reserved_days', null=True, blank=True)
+
+    book_days = models.ManyToManyField('DateHelper', verbose_name='Забронированные дни', related_name='book_days', null=True, blank=True)
+
     def __unicode__(self):
         return str(self.id)
 
@@ -69,7 +87,6 @@ class ComfortSettings(models.Model):
         verbose_name_plural = 'Удобства'
 
     title = models.CharField(max_length=255, verbose_name='Наименования')
-    value = models.BooleanField(verbose_name='Значение')
 
     def __unicode__(self):
         return self.title
@@ -110,6 +127,30 @@ class Star(models.Model):
 
     title = models.CharField(max_length=255, verbose_name='Наименование')
     preview = models.ImageField(upload_to='', verbose_name='Изображение')
+
+    def __unicode__(self):
+        return self.title
+
+
+class DateHelper(models.Model):
+    class Meta:
+        db_table = 'date_helper'
+        verbose_name = 'Дату'
+        verbose_name_plural = 'Даты'
+
+    date = models.DateField(verbose_name='Дата')
+
+    def __unicode__(self):
+        return str(self.date)
+
+
+class AccommodationType(models.Model):
+    class Meta:
+        db_table = 'accommodation_type'
+        verbose_name = 'Тип жилья'
+        verbose_name_plural = 'Типы жилья'
+
+    title = models.CharField(max_length=255, verbose_name='Наименование')
 
     def __unicode__(self):
         return self.title

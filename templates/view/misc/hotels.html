@@ -5,7 +5,7 @@
             <a href="{% url 'accommodation_info' uid=hotel.id %}"><img src="{{ hotel.preview.first.content.url }}"
                                                                        alt="hotel"></a>
 
-            <div class="cost"><span>от</span><br>${{ hotel.price_usd }}</div>
+            <div class="cost"><span>от</span><br>{{ hotel.price }}KGS</div>
         </div>
 
         <div class="hotel_desc">

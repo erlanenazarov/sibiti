@@ -135,14 +135,6 @@ function Tabs(options){
 }
 
 
-var m = new Tabs({
-    el: "#tabs",
-    marker: true
-});
-
-m.init();
-
-
 function popupApp(){
     //$(this).css('display','none');
     //$(this).parent('.c-tab__content').children().css('display', 'none');
@@ -170,7 +162,7 @@ function ShowSlider(){
     $('.gallery').css('display', 'block');
 }
 
-$(document).ready(function () {
+function accommodationPageInit() {
     $('.accommodation_desc,.comments,.accommodation_details').perfectScrollbar();
     $('.ps-scrollbar-y-rail').css('opacity', 1);
 
@@ -178,5 +170,4 @@ $(document).ready(function () {
     $('.application').find('.button').click(ClosePopup);
     $('.c-tabs-nav').find('a:nth-child(3)').click(LocationPopup);
     $('.c-tabs-nav').find('a:not(a:nth-child(3))').click(ShowSlider);
-
-});
+}

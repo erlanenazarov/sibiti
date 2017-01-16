@@ -1,4 +1,4 @@
-DB_NAME = 'cbt_main'
+DB_NAME = 'cbt_data_base'
 DB_USER = 'root'
 DB_PASS = ''
 ROOT_FOLDER = 'cbt_main'

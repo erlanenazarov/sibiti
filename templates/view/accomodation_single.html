@@ -19,8 +19,9 @@
                             <img src="{{ image.content.url }}" alt="image">
                             <div class="ppr">
                                 <div class="place">{{ hotel.title }}</div>
-                                <div class="price">$ {{ hotel.price_usd }}</div>
-                                <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">{{ hotel.rate }}</div>
+                                <div class="price">{{ hotel.price }}KGS</div>
+                                <div class="rate"><img src="{% static 'images/rate.png' %}" alt="rate">{{ hotel.rate }}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -351,4 +352,15 @@
 {% block javascripts %}
     {{ block.super }}
     <script src="{% static 'js/perfect-scrollbar.jquery.js' %}"></script>
+{% endblock %}
+
+{% block custom_scripts %}
+    <script>
+        var m = new Tabs({
+            el: "#tabs",
+            marker: true
+        });
+        accommodationPageInit();
+        m.init();
+    </script>
 {% endblock %}

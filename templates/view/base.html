@@ -11,38 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% block custom_styles %}
-        <style>
-            button {
-                cursor: pointer;
-            }
 
-            .tour > img {
-                cursor: pointer;
-
-                vertical-align: middle;
-                alignment: center;
-
-                -webkit-transition: all 0.5s;
-                -moz-transition: all 0.5s;
-                -ms-transition: all 0.5s;
-                -o-transition: all 0.5s;
-                transition: all 0.5s;
-            }
-
-            .tour:hover > img {
-                zoom: 1.1;
-
-                -webkit-transition: zoom 0.5s;
-                -moz-transition: zoom 0.5s;
-                -ms-transition: zoom 0.5s;
-                -o-transition: zoom 0.5s;
-                transition: zoom 0.5s;
-            }
-
-            a {
-                text-decoration: none;
-            }
-        </style>
     {% endblock %}
 </head>
 <body>
@@ -138,7 +107,7 @@
 {% block javascripts %}
     <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
     <script src="{% static 'slick/slick.js' %}"></script>
-{#    <script src="{% static 'js/script.js' %}"></script>#}
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
 
 {% block custom_scripts %}
